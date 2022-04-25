@@ -1,0 +1,17 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Lista de tarefas baseada no MS todo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "html",
+    "css3",
+    "js",
+    "node"
+  ],
+  "author": "Jose Wesley",
+  "license": "MIT"
+}
