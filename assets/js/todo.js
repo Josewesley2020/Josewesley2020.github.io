@@ -62,6 +62,8 @@ newTask.addEventListener("keyup", (e) => {
             title: newTask.value, done: false,
             dueDate: today,
         });
+            document.querySelector(".tasks").innerHTML = "",
+            getAllTasks(db);
 
             newTask.value = "";
             console.log(db);

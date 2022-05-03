@@ -37,7 +37,8 @@
                             <option value="4">Vw</option>
                         </select>
 
-                        <textarea name="message" class="form-control" cols="20" rows="10" placeholder="Mensagem"></textarea>
+                        <textarea name="message" id="message" oninput="autoHeigth(this)" class="form-control"
+                            style="overflow:hidden" cols="20" placeholder="Mensagem"></textarea>
 
                     </div>
 
@@ -54,6 +55,11 @@
         </div>
     </div>
     <script>
+
+        function autoHeigth(element) {
+            element.style.height = "20px";
+            element.style.height = (element.scrollHeight) + "px";
+        }
         const opcao = document.querySelectorAll("input[type='radio']");
         const btnSend = document.querySelector("#btn-send");
 
