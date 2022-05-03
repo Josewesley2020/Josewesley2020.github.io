@@ -1,3 +1,7 @@
+import { addTask, getAllTasks } from "../js/utils/domFuctions.js";
+
+
+//Banco de Dados NoSQL - Orientado a Documento
 
 
 const db = [
@@ -30,8 +34,11 @@ const db = [
 
 ];
 
-console.log(db[0].title);
+getAllTasks(db);
 
+//console.log(db[0].title);
+
+// DOM 
 const newTask = document.querySelector('#inputTxtNewTask');
 const form = document.querySelector('#addNewTask');
 form.addEventListener("submit", (e) => {
@@ -39,17 +46,27 @@ form.addEventListener("submit", (e) => {
 });
 
 newTask.addEventListener("keyup", (e) => { 
+    console.log("Keyup")
     e.preventDefault();
     e.stopPropagation();
     if(e.key == "Enter") {
-        alert(newTask.value);
+        if (!newTask.value) {
+            alert("INPUT VAZIO - Digite nova tarefa!")
+        } else{
+            alert(newTask.value);
 
-        db.push({id: Number(db.length) + 1, title: newTask.value});
-        newTask.value = " ";
-        console.log(db);
+            const d = new Date();
+            const today = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
 
+            db.push({id: Number(db.length) + 1, 
+            title: newTask.value, done: false,
+            dueDate: today,
+        });
+
+            newTask.value = "";
+            console.log(db);
+        }
     }
-
 });
 
 

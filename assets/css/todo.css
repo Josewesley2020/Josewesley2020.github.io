@@ -139,8 +139,24 @@ header.menu__header__profile > div {
     justify-content: space-between;
 }
 
+.task {
+    width: 90%;
+    margin: 2% 5%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(240, 240, 240, 0.8);
+    border-radius: 5px;
+}
+
+.task:hover {
+    background: rgba(240, 240, 240);
+    cursor: pointer;
+}
+
 /* TABLET */
-@media (min-width:1920px){
+@media (min-width:768px){
     .container{
         background: url(/assets/images/bg-tablet.jpg) center no-repeat;
         background-size: cover;
